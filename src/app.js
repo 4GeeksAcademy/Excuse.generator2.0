@@ -1,32 +1,27 @@
-/* eslint-disable */
-import "bootstrap";
-import "./style.css";
+// my arrays:
+let who = ["El perro ", "Su novia ", "La chavala ", "El guevón "];
+let action = ["se comió ", "tiró ", "desintegró ", "se fumó "];
+let what = ["mi tarea ", "las llaves ", "el coche ", "la casa "];
+let when = [
+  "antes de clase.",
+  "justo a tiempo.",
+  "cuando terminé.",
+  "mientras comia.",
+  "cuando salí."
+];
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
-
+// My random reusable function:
+function obtenerElemento(cualquier) {
+  return Math.floor(Math.random() * cualquier.length);
+}
+//My reload restart function for random items
 window.onload = function excusesrc() {
-  //write your code here
-
-  let who = ["The dog ", "My grandma ", "His turtle ", "My bird "];
-  let action = ["ate ", "peed ", "crushed ", "broke "];
-  let what = ["my homework ", "the keys ", "the car "];
-  let when = [
-    "before the class.",
-    "right on time.",
-    "when I finished.",
-    "during my lunch.",
-    "while I was praying."
-  ];
-
-  let randomwho = Math.floor(Math.random() * who.length);
-  let randomaction = Math.floor(Math.random() * action.length);
-  let randomwhat = Math.floor(Math.random() * what.length);
-  let randomwhen = Math.floor(Math.random() * when.length);
-
   var excusesrc =
-    who[randomwho] + action[randomaction] + what[randomwhat] + when[randomwhen];
-
+    who[obtenerElemento(who)] +
+    action[obtenerElemento(action)] +
+    what[obtenerElemento(what)] +
+    when[obtenerElemento(when)];
+  //my link to the html source id
   var excuse = document.getElementById("excuse");
   excuse.innerHTML = excusesrc;
 };
